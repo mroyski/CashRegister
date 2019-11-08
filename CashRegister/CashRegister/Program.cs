@@ -13,7 +13,7 @@ namespace CashRegister
             decimal total;
             var cart = new List<Product>();
             var exit = false;
-            while (exit == false)
+            while (!exit)
             {
                 total = 0;
                 Console.WriteLine("Scanned Items:");
