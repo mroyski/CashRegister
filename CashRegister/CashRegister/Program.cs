@@ -19,7 +19,17 @@ namespace CashRegister
                 Console.WriteLine("Scanned Items:");
                 foreach (var item in cart)
                 {
-                    Console.WriteLine($"{item.Name} : ${item.Price}");
+                    Console.Write($"{item.Name} : ${item.Price}");
+                    if (item.HasWeight)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine($" {item.Weight}lb");
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
+                    else
+                    {
+                        Console.WriteLine();
+                    }
                     total += item.Price;
                 }
                 Console.WriteLine();
@@ -30,6 +40,7 @@ namespace CashRegister
                 Console.WriteLine("Scan an item");
                 Console.WriteLine("a: apple\nb: banana\nc: chicken\nd: steak\ne: cheerios\nf: fruit loops\ng: enter PLU\nx: exit");
                 var scan = Console.ReadKey().KeyChar;
+                Console.WriteLine();
                 switch (scan)
                 {
                     case 'a':
