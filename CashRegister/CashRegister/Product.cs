@@ -23,7 +23,7 @@ namespace CashRegister
                 Weight = Convert.ToDecimal(weight);
                 Price = Weight * Price;
             }
-            catch (Exception ex)
+            catch
             {
                 Price = 0;
             }
