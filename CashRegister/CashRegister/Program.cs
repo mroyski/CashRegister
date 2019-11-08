@@ -19,6 +19,7 @@ namespace CashRegister
                 Console.WriteLine("Scanned Items:");
                 foreach (var item in cart)
                 {
+                    // If it requires weight print the weight
                     Console.Write($"{item.Name} : ${Math.Round(item.Price, 2)}");
                     if (item.HasWeight)
                     {
@@ -33,10 +34,12 @@ namespace CashRegister
                     total += item.Price;
                 }
                 Console.WriteLine();
+                // Print the total
                 Console.Write($"Total: ");
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"${Math.Round(total, 2)}\n");
                 Console.ForegroundColor = ConsoleColor.White;
+                // Scan item prompt
                 Console.WriteLine("Scan an item");
                 Console.WriteLine("a: apple\nb: banana\nc: chicken\nd: steak\ne: cheerios\nf: fruit loops\ng: enter PLU\nx: exit");
                 var scan = Console.ReadKey().KeyChar;
@@ -62,6 +65,7 @@ namespace CashRegister
                         cart.Add(new FruitLoops());
                         break;
                     case 'g':
+                        // Enter PLU code
                         Console.WriteLine("enter the plu\napple: 4130, banana: 4011");
                         var plu = Console.ReadLine();
                         if (plu == "4011")
