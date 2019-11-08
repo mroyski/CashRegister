@@ -9,6 +9,5 @@ namespace CashRegister
     public class Produce : Product, IWeight
     {
         public string Code { get; set; }
-
     }
 }

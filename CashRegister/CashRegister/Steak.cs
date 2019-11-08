@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace CashRegister
 {
-    public class Chicken : Meat
+    public class Steak : Meat
     {
-        public Chicken()
+        public Steak()
         {
-            Name = "Chicken";
+            Name = "Steak";
             HasWeight = true;
-            Price = 3.00M;
-            OnSale = true;
+            Price = 8.00M;
+            OnSale = false;
             GetWeight();
         }
     }

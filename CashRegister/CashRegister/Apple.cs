@@ -15,6 +15,7 @@ namespace CashRegister
             HasWeight = true;
             Price = 1.79M;
             OnSale = false;
+            GetWeight();
         }
     }
 }

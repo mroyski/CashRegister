@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace CashRegister
 {
-    public interface IWeight
+    public interface IItem
     {
-        void GetWeight();
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+
     }
 }

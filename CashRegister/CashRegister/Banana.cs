@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace CashRegister
 {
-    public class Chicken : Meat
+    public class Banana : Produce
     {
-        public Chicken()
+        public Banana()
         {
-            Name = "Chicken";
+            Name = "Banana";
+            Code = "4011";
             HasWeight = true;
-            Price = 3.00M;
-            OnSale = true;
+            Price = 1.59M;
+            OnSale = false;
             GetWeight();
         }
     }

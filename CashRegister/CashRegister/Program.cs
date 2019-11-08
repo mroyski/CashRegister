@@ -19,38 +19,57 @@ namespace CashRegister
                 Console.WriteLine("Scanned Items:");
                 foreach (var item in cart)
                 {
-                    Console.WriteLine($"{item.Name} : {item.Price}");
+                    Console.WriteLine($"{item.Name} : ${item.Price}");
                     total += item.Price;
                 }
-                Console.WriteLine($"Total: {total}");
+                Console.WriteLine();
+                Console.Write($"Total: ");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"${total}\n");
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("Scan an item");
-                Console.WriteLine("a: apple\nb: cheerios\nc: chicken\nd:exit");
+                Console.WriteLine("a: apple\nb: banana\nc: chicken\nd: steak\ne: cheerios\nf: fruit loops\ng: enter PLU\nx: exit");
                 var scan = Console.ReadKey().KeyChar;
                 switch (scan)
                 {
                     case 'a':
-                        var apple = new Apple();
-                        apple.GetWeight();
-                        cart.Add(apple);
+                        cart.Add(new Apple());
                         break;
                     case 'b':
-                        cart.Add(new Cheerios());
+                        cart.Add(new Banana());
                         break;
                     case 'c':
-                        var chicken = new Chicken();
-                        chicken.GetWeight();
-                        cart.Add(chicken);
+                        cart.Add(new Chicken());
                         break;
                     case 'd':
+                        cart.Add(new Steak());
+                        break;
+                    case 'e':
+                        cart.Add(new Cheerios());
+                        break;
+                    case 'f':
+                        cart.Add(new FruitLoops());
+                        break;
+                    case 'g':
+                        Console.WriteLine("enter the plu\napple: 4130, banana: 4011");
+                        var plu = Console.ReadLine();
+                        if (plu == "4011")
+                        {
+                            cart.Add(new Apple());
+                        }
+                        else if (plu == "4130")
+                        {
+                            cart.Add(new Banana());
+                        }
+                        break;
+                    case 'x':
                         exit = true;
                         break;
                     default:
                         break;
                 }
                 Console.Clear();
-
             }
-
         }
     }
 }

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CashRegister
 {
-    public class Cheerios : Cereal
+    public class FruitLoops : Cereal
     {
-        public Cheerios()
+        public FruitLoops()
         {
-            Name = "Cheerios";
+            Name = "Fruit Loops";
             HasWeight = false;
             Price = 3.50M;
             OnSale = true;
