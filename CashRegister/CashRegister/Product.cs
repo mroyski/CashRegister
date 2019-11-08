@@ -17,9 +17,17 @@ namespace CashRegister
         public void GetWeight()
         {
             Console.WriteLine("Enter the weight");
-            var weight = Console.ReadLine();
-            Weight = Convert.ToDecimal(weight);
-            Price = Weight * Price;
+            try
+            {
+                var weight = Console.ReadLine();
+                Weight = Convert.ToDecimal(weight);
+                Price = Weight * Price;
+            }
+            catch (Exception ex)
+            {
+                Price = 0;
+            }
+
         }
     }
 }
